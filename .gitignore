@@ -1,0 +1,13 @@
+node_modules/
+.nuxt/
+.output/
+dist/
+.env
+.env.*
+*.md
+!README.md
+!.env.example
+*.log
+.DS_Store
+.vscode/
+*.tsbuildinfo
