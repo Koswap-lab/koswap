@@ -8,7 +8,7 @@
         <!-- Left: Branding -->
         <div class="lg:col-span-4">
           <div class="mb-6">
-            <img src="/logo.png" alt="KO SWAP Logo" class="h-10" />
+            <img src="/logo.png" alt="KO.SWAP Logo" class="h-10" />
           </div>
           <p class="font-sans text-white/70 text-sm leading-relaxed max-w-sm mb-8">
             The fastest way to swap between crypto and Naira — directly to your bank account. Built for Africa, connected to the world.

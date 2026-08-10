@@ -10,7 +10,7 @@
       <!-- Right: Content -->
       <div class="order-1 lg:order-2 lg:pl-10">
         <h2 class="font-display font-bold text-graphite text-4xl md:text-5xl tracking-tight mb-4">
-          Why KO SWAP?
+          Why KO.SWAP?
         </h2>
         <p class="font-sans text-slate text-lg mb-12 max-w-lg leading-relaxed">
           Designed specifically for speed, reliability, and security without standard crypto obstacles.

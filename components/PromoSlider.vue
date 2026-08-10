@@ -40,7 +40,7 @@
             </div>
             <div class="relative z-10 p-6 md:p-8 flex items-center h-full">
               <div class="flex items-center gap-3 md:gap-4">
-                <div class="font-display font-bold text-white text-2xl md:text-4xl tracking-tight">KO SWAP</div>
+                <div class="font-display font-bold text-white text-2xl md:text-4xl tracking-tight">KO.SWAP</div>
                 <div class="w-px h-8 bg-white/20"></div>
                 <div class="flex items-center gap-2">
                   <div class="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center text-white font-bold text-xs">T</div>
