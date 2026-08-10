@@ -1,21 +1,18 @@
 import { Resend } from 'resend'
-
-// Local in-memory / persistent set for local testing & count tracking
-const waitlistEmails = new Set<string>([
-  'early.user1@koswap.com',
-  'early.user2@koswap.com',
-  'early.user3@koswap.com'
-])
+import { connectToDatabase } from '../utils/db'
+import { Waitlist } from '../models/Waitlist'
 
 const BASE_COUNT = 2847
 
 export default defineEventHandler(async (event) => {
+  await connectToDatabase()
   const method = event.node.req.method
 
   // GET: return current counter
   if (method === 'GET') {
+    const dbCount = await Waitlist.countDocuments()
     return {
-      count: BASE_COUNT + waitlistEmails.size
+      count: BASE_COUNT + dbCount
     }
   }
 
@@ -32,18 +29,25 @@ export default defineEventHandler(async (event) => {
       })
     }
 
-    // 2. Check duplicate state
-    if (waitlistEmails.has(email)) {
-      return {
-        success: true,
-        duplicate: true,
-        message: "You're already on the list! We will reach out as soon as early access opens.",
-        count: BASE_COUNT + waitlistEmails.size
+    // 2 & 3. Save new email / Check duplicate state
+    try {
+      await Waitlist.create({ email })
+    } catch (error: any) {
+      if (error.code === 11000) {
+        // Duplicate key error
+        const dbCount = await Waitlist.countDocuments()
+        return {
+          success: true,
+          duplicate: true,
+          message: "You're already on the list! We will reach out as soon as early access opens.",
+          count: BASE_COUNT + dbCount
+        }
       }
+      throw createError({
+        statusCode: 500,
+        statusMessage: 'Internal server error.'
+      })
     }
-
-    // 3. Save new email
-    waitlistEmails.add(email)
 
     // 4. Send email via Resend if API key is present
     const resendApiKey = process.env.RESEND_API_KEY
@@ -51,7 +55,7 @@ export default defineEventHandler(async (event) => {
       try {
         const resend = new Resend(resendApiKey)
         await resend.emails.send({
-          from: 'KO SWAP <waitlist@koswap.com>',
+          from: 'KO SWAP <waitlist@koswap.co>',
           to: [email],
           subject: "You're on the KO SWAP Waitlist! ⚡",
           html: `
@@ -80,11 +84,12 @@ export default defineEventHandler(async (event) => {
       }
     }
 
+    const dbCount = await Waitlist.countDocuments()
     return {
       success: true,
       duplicate: false,
       message: "You're in! We've reserved your spot on the KO SWAP waitlist.",
-      count: BASE_COUNT + waitlistEmails.size
+      count: BASE_COUNT + dbCount
     }
   }
 })
