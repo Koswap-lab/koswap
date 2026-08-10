@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   ],
   app: {
     head: {
-      title: 'KO SWAP - Fast, frictionless crypto & naira swaps',
+      title: 'KO.SWAP - Fast, frictionless crypto & naira swaps',
       meta: [
         { name: 'description', content: 'KO SWAP is the effortless way to swap crypto and Naira in Nigeria. Join the waitlist for early access.' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' }

@@ -67,7 +67,7 @@
 
       <!-- Bottom Section -->
       <div class="mt-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-sans text-white/40 text-center md:text-left">
-        <p>&copy; 2026 KO SWAP Technologies. All rights reserved.</p>
+        <p>&copy; 2026 KO.SWAP Technologies. All rights reserved.</p>
         <p class="max-w-2xl">
           Disclaimer: Trading cryptocurrency involves significant risk. You should carefully consider whether trading or holding digital assets is suitable for you in light of your financial condition.
         </p>
