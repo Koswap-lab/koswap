@@ -59,7 +59,19 @@ export default defineEventHandler(async (event) => {
           to: [email],
           subject: "You're on the list.",
           html: `
-            <div style="background-color: #FAF7F2; padding: 40px 20px; font-family: sans-serif; color: #1C1B19;">
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+              <meta charset="utf-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <meta name="color-scheme" content="light only">
+              <meta name="supported-color-schemes" content="light only">
+              <style>
+                :root { color-scheme: light; supported-color-schemes: light; }
+              </style>
+            </head>
+            <body style="margin: 0; padding: 0; background-color: #FAF7F2;">
+              <div style="background-color: #FAF7F2; padding: 40px 20px; font-family: sans-serif; color: #1C1B19;">
               <div style="max-width: 560px; margin: 0 auto; background: #FFFFFF; border-radius: 20px; padding: 32px; border: 1px solid #1C1B1910;">
                 <div style="margin-bottom: 32px;">
                   <img src="https://koswap.co/logo.png" alt="KO SWAP" style="height: 32px; display: block;" />
@@ -88,7 +100,9 @@ export default defineEventHandler(async (event) => {
                 &copy; ${new Date().getFullYear()} KO.SWAP. All rights reserved.<br>
                 <a href="https://koswap.co" style="color: #2A4BFF; text-decoration: none;">koswap.co</a>
               </div>
-            </div>
+              </div>
+            </body>
+            </html>
           `
         })
       } catch (e) {
