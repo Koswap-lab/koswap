@@ -34,7 +34,7 @@
 
       <!-- Dashboard State -->
       <div v-else>
-        <div class="flex justify-between items-end mb-6">
+        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-6">
           <h2 class="text-2xl font-bold font-display">Waitlist Subscribers</h2>
           <div class="flex items-center gap-4">
             <div class="text-[#6B6A66] font-mono bg-white px-4 py-2 rounded-xl border border-[#1C1B19]/5 shadow-sm">
@@ -74,12 +74,20 @@
                     </span>
                   </td>
                   <td class="px-6 py-4 text-right">
-                    <button 
-                      @click="openReplyModal(user)"
-                      class="text-sm font-medium text-[#2A4BFF] hover:text-[#1A3BEF] transition-colors bg-[#2A4BFF]/5 hover:bg-[#2A4BFF]/10 px-4 py-2 rounded-lg"
-                    >
-                      Reply
-                    </button>
+                    <div class="flex items-center justify-end gap-2">
+                      <button 
+                        @click="openReplyModal(user)"
+                        class="text-sm font-medium text-[#2A4BFF] hover:text-[#1A3BEF] transition-colors bg-[#2A4BFF]/5 hover:bg-[#2A4BFF]/10 px-4 py-2 rounded-lg"
+                      >
+                        Reply
+                      </button>
+                      <button 
+                        @click="deleteUser(user)"
+                        class="text-sm font-medium text-[#DC2626] hover:text-[#B91C1C] transition-colors bg-[#DC2626]/5 hover:bg-[#DC2626]/10 px-4 py-2 rounded-lg"
+                      >
+                        Delete
+                      </button>
+                    </div>
                   </td>
                 </tr>
               </tbody>
@@ -245,6 +253,26 @@ const sendReply = async () => {
     alert(err.data?.statusMessage || 'Failed to send reply. Please check console.')
   } finally {
     isSending.value = false
+  }
+}
+
+const deleteUser = async (user) => {
+  if (!confirm(`Are you sure you want to delete ${user.email} from the waitlist?`)) return
+  
+  try {
+    await $fetch('/api/admin/waitlist', {
+      method: 'DELETE',
+      body: { 
+        password: password.value,
+        email: user.email
+      }
+    })
+    
+    // Update local state
+    users.value = users.value.filter(u => u.email !== user.email)
+  } catch (err) {
+    console.error('Failed to delete user', err)
+    alert(err.data?.statusMessage || 'Failed to delete user.')
   }
 }
 </script>

@@ -44,13 +44,16 @@ export default defineEventHandler(async (event) => {
       html: `
         <div style="background-color: #FAF7F2; padding: 40px 20px; font-family: sans-serif; color: #1C1B19;">
           <div style="max-width: 560px; margin: 0 auto; background: #FFFFFF; border-radius: 20px; padding: 32px; border: 1px solid #1C1B1910;">
-            <div style="display: flex; align-items: center; margin-bottom: 24px;">
-              <div style="background: #1C1B19; color: #FAF7F2; font-weight: bold; width: 36px; height: 36px; border-radius: 8px; text-align: center; line-height: 36px; margin-right: 10px;">KO</div>
-              <h2 style="margin: 0; font-size: 20px; color: #1C1B19;">KO <span style="color: #2A4BFF;">SWAP</span></h2>
+            <div style="margin-bottom: 32px;">
+              <img src="https://koswap.co/logo.png" alt="KO SWAP" style="height: 32px; display: block;" />
             </div>
             <p style="font-size: 16px; line-height: 1.6; color: #1C1B19; margin-bottom: 24px;">
               ${formattedMessage}
             </p>
+          </div>
+          <div style="max-width: 560px; margin: 32px auto 0; text-align: center; color: #6B6A66; font-size: 12px; line-height: 1.6;">
+            &copy; ${new Date().getFullYear()} KO SWAP. All rights reserved.<br>
+            <a href="https://koswap.co" style="color: #2A4BFF; text-decoration: none;">koswap.co</a>
           </div>
         </div>
       `
