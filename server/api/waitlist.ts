@@ -57,26 +57,35 @@ export default defineEventHandler(async (event) => {
         await resend.emails.send({
           from: 'KO SWAP <waitlist@koswap.co>',
           to: [email],
-          subject: "You're on the KO SWAP Waitlist! ⚡",
+          subject: "You're on the list.",
           html: `
             <div style="background-color: #FAF7F2; padding: 40px 20px; font-family: sans-serif; color: #1C1B19;">
               <div style="max-width: 560px; margin: 0 auto; background: #FFFFFF; border-radius: 20px; padding: 32px; border: 1px solid #1C1B1910;">
                 <div style="margin-bottom: 32px;">
                   <img src="https://koswap.co/logo.png" alt="KO SWAP" style="height: 32px; display: block;" />
                 </div>
-                <h1 style="font-size: 24px; font-weight: bold; margin-bottom: 16px; color: #1C1B19;">You're officially on the list!</h1>
-                <p style="font-size: 16px; line-height: 1.6; color: #6B6A66; margin-bottom: 24px;">
-                  Thank you for joining the KO SWAP early access waitlist. We are building the fastest, most reliable crypto and Naira swap platform in Nigeria.
+                <p style="font-size: 16px; line-height: 1.6; color: #1C1B19; margin-bottom: 24px;">
+                  Hi,
                 </p>
-                <div style="background-color: #FAF7F2; padding: 16px; border-radius: 12px; font-family: monospace; font-size: 14px; margin-bottom: 24px; color: #1C1B19;">
-                  Status: <strong>Priority Access Confirmed</strong>
-                </div>
-                <p style="font-size: 14px; color: #6B6A66;">
-                  We'll email you the moment private beta access opens — no spam, one email.
+                <p style="font-size: 16px; line-height: 1.6; color: #1C1B19; margin-bottom: 24px;">
+                  You're in.
+                </p>
+                <p style="font-size: 16px; line-height: 1.6; color: #1C1B19; margin-bottom: 24px;">
+                  We're building KO.SWAP to make moving between digital assets and traditional finance simpler, smarter and more seamless.
+                </p>
+                <p style="font-size: 16px; line-height: 1.6; color: #1C1B19; margin-bottom: 24px;">
+                  We're still putting the pieces together, but you'll be among the first to know when we're ready.
+                </p>
+                <p style="font-size: 16px; line-height: 1.6; color: #1C1B19; margin-bottom: 32px;">
+                  See you on the other side.
+                </p>
+                <p style="font-size: 16px; line-height: 1.6; color: #1C1B19; font-weight: bold; margin: 0;">
+                  KO.SWAP<br>
+                  <span style="font-weight: normal; color: #6B6A66;">Finance, on your terms.</span>
                 </p>
               </div>
               <div style="max-width: 560px; margin: 32px auto 0; text-align: center; color: #6B6A66; font-size: 12px; line-height: 1.6;">
-                &copy; ${new Date().getFullYear()} KO SWAP. All rights reserved.<br>
+                &copy; ${new Date().getFullYear()} KO.SWAP. All rights reserved.<br>
                 <a href="https://koswap.co" style="color: #2A4BFF; text-decoration: none;">koswap.co</a>
               </div>
             </div>
