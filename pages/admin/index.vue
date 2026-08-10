@@ -5,7 +5,7 @@
         <div class="bg-[#1C1B19] text-[#FAF7F2] font-bold w-12 h-12 rounded-xl flex items-center justify-center text-xl">
           KO
         </div>
-        <h1 class="text-3xl font-bold font-display">KO SWAP <span class="text-[#2A4BFF]">Admin</span></h1>
+        <h1 class="text-3xl font-bold font-display">KO.SWAP <span class="text-[#2A4BFF]">Admin</span></h1>
       </div>
 
       <!-- Login State -->
