@@ -14,7 +14,7 @@ export default defineNuxtConfig({
         // Open Graph
         { property: 'og:title', content: 'KO.SWAP - Fast, frictionless crypto & naira swaps' },
         { property: 'og:description', content: 'KO.SWAP is the effortless way to swap crypto and Naira in Nigeria. Join the waitlist for early access.' },
-        { property: 'og:image', content: 'https://www.koswap.co/ko-swap-logo-black-background.jpg' },
+        { property: 'og:image', content: 'https://www.koswap.co/ko-swap-logo-white-background.jpg' },
         { property: 'og:image:type', content: 'image/png' },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
@@ -27,7 +27,7 @@ export default defineNuxtConfig({
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: 'KO.SWAP - Fast, frictionless crypto & naira swaps' },
         { name: 'twitter:description', content: 'KO.SWAP is the effortless way to swap crypto and Naira in Nigeria. Join the waitlist for early access.' },
-        { name: 'twitter:image', content: 'https://www.koswap.co/ko-swap-logo-black-background.jpg' }
+        { name: 'twitter:image', content: 'https://www.koswap.co/ko-swap-logo-white-background.jpg' }
       ],
       link: [
         { rel: 'icon', type: 'image/png', href: '/ko-swap-logo-transparent-background.png' },
