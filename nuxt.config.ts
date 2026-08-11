@@ -8,10 +8,10 @@ export default defineNuxtConfig({
     head: {
       title: 'KO.SWAP - Fast, frictionless crypto & naira swaps',
       meta: [
-        { name: 'description', content: 'KO SWAP is the effortless way to swap crypto and Naira in Nigeria. Join the waitlist for early access.' },
+        { name: 'description', content: 'KO.SWAP is the effortless way to swap crypto and Naira in Nigeria. Join the waitlist for early access.' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { property: 'og:title', content: 'KO.SWAP - Fast, frictionless crypto & naira swaps' },
-        { property: 'og:description', content: 'KO SWAP is the effortless way to swap crypto and Naira in Nigeria. Join the waitlist for early access.' },
+        { property: 'og:description', content: 'KO.SWAP is the effortless way to swap crypto and Naira in Nigeria. Join the waitlist for early access.' },
         { property: 'og:image', content: 'https://www.koswap.co/ko-swap-logo-transparent-background.png' },
         { property: 'og:url', content: 'https://www.koswap.co/' },
         { property: 'og:type', content: 'website' }
