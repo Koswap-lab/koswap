@@ -21,7 +21,7 @@
     >
       <!-- Logo Image -->
       <a href="#" class="inline-block">
-        <img src="/logo.png" alt="KO.SWAP Logo" class="h-8 md:h-10" />
+        <img src="/ko-swap-logo-transparent-background.png" alt="KO.SWAP Logo" class="h-8 md:h-10" />
       </a>
 
       <!-- CTA Button -->
